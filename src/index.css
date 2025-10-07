@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Telkom Design System - Colors, gradients, fonts, etc defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Telkom Brand Colors */
+    --background: 0 0% 100%;
+    --foreground: 216 12% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 216 12% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 216 12% 8%;
+
+    /* Telkom Primary Blue */
+    --primary: 190 100% 40%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 190 100% 35%;
+
+    /* Telkom Secondary Colors */
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 216 12% 8%;
+
+    /* Telkom Green (CTA) */
+    --accent: 88 95% 50%;
+    --accent-foreground: 216 12% 8%;
+    --accent-hover: 88 95% 45%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 190 100% 40%;
+
+    --radius: 0.75rem;
+
+    /* Telkom Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(190 100% 45%));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(88 95% 50%));
+    --gradient-card: linear-gradient(180deg, hsl(var(--card)), hsl(210 40% 98%));
+
+    /* Telkom Shadows */
+    --shadow-card: 0 4px 6px -1px hsl(var(--primary) / 0.1), 0 2px 4px -1px hsl(var(--primary) / 0.06);
+    --shadow-hero: 0 20px 25px -5px hsl(var(--primary) / 0.1), 0 10px 10px -5px hsl(var(--primary) / 0.04);
+
+    /* Typography Scale */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme for Telkom dashboard */
+    --background: 216 28% 7%;
+    --foreground: 0 0% 98%;
+
+    --card: 216 28% 9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 216 28% 9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 190 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 190 100% 45%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 0 0% 98%;
+
+    --accent: 88 95% 55%;
+    --accent-foreground: 216 28% 7%;
+    --accent-hover: 88 95% 50%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 190 100% 50%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Telkom Typography */
+  .telkom-heading {
+    @apply font-bold text-foreground leading-tight;
+  }
+
+  .telkom-subheading {
+    @apply font-semibold text-muted-foreground;
+  }
+
+  .telkom-body {
+    @apply text-foreground leading-relaxed;
+  }
+
+  /* Telkom Components */
+  .telkom-card {
+    @apply bg-card border border-border rounded-lg shadow-[var(--shadow-card)] transition-all duration-200;
+  }
+
+  .telkom-card-hover {
+    @apply hover:shadow-[var(--shadow-hero)] hover:scale-[1.02];
+  }
+
+  .telkom-button-primary {
+    @apply bg-primary text-primary-foreground hover:bg-[hsl(var(--primary-hover))] font-medium rounded-lg transition-all duration-200;
+  }
+
+  .telkom-button-secondary {
+    @apply bg-accent text-accent-foreground hover:bg-[hsl(var(--accent-hover))] font-medium rounded-lg transition-all duration-200;
+  }
+
+  .telkom-nav-item {
+    @apply text-foreground hover:text-primary transition-colors duration-200 font-medium;
+  }
+
+  .telkom-gradient-bg {
+    background: var(--gradient-primary);
+  }
+
+  .telkom-hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  /* Animation utilities */
+  .fade-in {
+    @apply animate-[fadeIn_0.5s_ease-out];
+  }
+
+  .slide-up {
+    @apply animate-[slideUp_0.3s_ease-out];
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
